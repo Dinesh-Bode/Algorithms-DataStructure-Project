@@ -7,7 +7,7 @@ public class DsAndAlgorithmsApplication {
 	public static void main(String[] args) {
 		//1. Reverse singly linked list using recursion
 		ReverseSinglyLL reverseSinglyLL = new ReverseSinglyLL();
-		reverseSinglyLL.reverseSinglyLinkedListRecursion();
+		reverseSinglyLL.reverseSinglyLinkedList();
 
 	}
 }

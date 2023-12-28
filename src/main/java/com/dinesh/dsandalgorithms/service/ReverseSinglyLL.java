@@ -5,31 +5,44 @@ import com.dinesh.dsandalgorithms.model.ListNode;
 import java.util.Objects;
 
 public class ReverseSinglyLL {
-    public void reverseSinglyLinkedListRecursion(){
+    public void reverseSinglyLinkedList(){
         ListNode head = createSinglyLinkedList();
         System.out.println("Before reversing ");
         printSinglyLinkedList(head);
 
-        head = reverseSinglyLinkedListRecursion(head);
-
+        //head = reverseSinglyLinkedListRecursion(head);
+        head = reverseSinglyLLIteration(head);
         System.out.println("After reversing");
         printSinglyLinkedList(head);
 
     }
 
-    private ListNode reverseSinglyLinkedListRecursion(ListNode head) {
+    private ListNode reverseSinglyLinkedList(ListNode head) {
         if(Objects.isNull(head) || Objects.isNull(head.getNext())) {
             return head;
         }
 
         //recursion
-        ListNode newNode = reverseSinglyLinkedListRecursion(head.getNext());
+        ListNode newNode = reverseSinglyLinkedList(head.getNext());
 
         head.getNext().setNext(head);
         head.setNext(null);
 
         return newNode;
     }
+
+    private ListNode reverseSinglyLLIteration(ListNode head) {
+        ListNode prev =null;
+
+        while(head != null) {
+            ListNode next = head.getNext();
+            head.setNext(prev);
+            prev = head;
+            head = next;
+        }
+        return prev;
+    }
+
     private ListNode createSinglyLinkedList(){
         ListNode head = new ListNode(1);
         ListNode node2 = new ListNode(2);
