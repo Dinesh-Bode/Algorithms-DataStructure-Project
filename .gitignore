@@ -2,3 +2,4 @@ mvnw
 mvnw.cmd
 .idea
 target
+/apache-maven-3.6.3-bin.tar.gz
